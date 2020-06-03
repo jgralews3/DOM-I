@@ -41,12 +41,28 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let siteHeader = document.querySelectorAll ("a");
-console.log(siteHeader);
+let siteNav = document.querySelectorAll ("a");
+let siteNavData = ["Services", "Product", "Vision", "Features", "About", "Contact"]
+for (i=0; i<siteNav.length; i++){
+siteNav[i].textContent = siteNavData[i];
+};
 
-let siteHeaderValues = ["Services", "Product", "Vision", "Features", "About", "Contact"]
-for (i=0; i<siteHeader.length; i++){
-siteHeader[i].textContent = siteHeaderValues[i]};
+let siteHeader = document.querySelector("nav");
+let addition1 = document.createElement('a');
+addition1.textContent = "Append";
+addition1.style.color = "green";
+
+let addition2 = document.createElement('a');
+addition2.textContent = "Prepend";
+addition2.style.color = "green";
+
+siteHeader.appendChild(addition1);
+siteHeader.prepend(addition2);
+
+// let siteHeader1 = document.querySelectorAll ("nav a");
+siteNav.forEach (element => {element.style.color = "green";})
+// siteHeader.forEach (element => {element.style.color = "green";})
+
 
 let codePic = document.getElementById ("cta-img");
 codePic.src = "/img/header-img.png";
